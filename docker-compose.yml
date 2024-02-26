@@ -1,0 +1,25 @@
+version: "3"
+services:
+  application:
+    image: web-app
+    ports:
+      - "8080:8080"
+    networks:
+      - springboot-db-net
+    depends_on:
+      - postgres
+    volumes:
+      - /data/springboot-app
+  postgres:
+    image: postgres
+    networks:
+      - springboot-db-net
+    environment:
+      - POSTGRESS_USERNAME=itsp
+      - POSTGRESS_PASSWORD=vivek
+    volumes:
+      - /data/postgres
+
+networks:
+  springboot-db-net:
+   
