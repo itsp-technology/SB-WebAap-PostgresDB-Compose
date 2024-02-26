@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Success</title>
+<style type="text/css">
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .info {
+        margin-bottom: 10px;
+    }
+
+    .info span {
+        display: inline-block;
+        width: 150px;
+        font-weight: bold;
+    }
+
+    .info-value {
+        display: inline-block;
+        width: calc(100% - 150px);
+    }
+
+    .link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Registration Succeeded!</h2>
+    <div class="info">
+        <span>ID :</span>
+        <span class="info-value" th:text="${emp.id}"></span>
+    </div>
+    <div class="info">
+        <span>Full name:</span>
+        <span class="info-value" th:text="${emp.name}"></span>
+    </div>
+    <div class="info">
+        <span>E-mail:</span>
+        <span class="info-value" th:text="${emp.email}"></span>
+    </div>
+    <div class="info">
+        <span>Password:</span>
+        <span class="info-value" th:text="${emp.password}"></span>
+    </div>
+    <div class="info">
+        <span>Gender:</span>
+        <span class="info-value" th:text="${emp.gender}"></span>
+    </div>
+    <div class="info">
+        <span>Profession:</span>
+        <span class="info-value" th:text="${emp.profession}"></span>
+    </div>
+    <div class="info">
+        <span>Married?</span>
+        <span class="info-value" th:text="${emp.married}"></span>
+    </div>
+    <div class="info">
+        <span>Note:</span>
+        <span class="info-value" th:text="${emp.note}"></span>
+    </div>
+    <a class="link" href="/">Register Page</a>
+</div>
+</body>
+</html>
