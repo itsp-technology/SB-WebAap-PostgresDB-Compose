@@ -1,4 +1,4 @@
-version: '2.1.1'
+version: '3'
 
 services:
   application:
@@ -10,17 +10,16 @@ services:
     depends_on:
       - postgres
     volumes:
-      - /data/springboot-app
+      - /data/springboot-app  # Volume mount for the application data
   postgres:
     image: postgres
     networks:
       - springboot-db-net
     environment:
-      - POSTGRESS_USERNAME=itsp
-      - POSTGRESS_PASSWORD=vivek
+      - POSTGRES_USER=itsp  # Correcting environment variable name
+      - POSTGRES_PASSWORD=vivek
     volumes:
-      - /data/postgres
+      - /data/postgres  # Volume mount for the Postgres data
 
 networks:
   springboot-db-net:
-   
